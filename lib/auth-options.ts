@@ -10,7 +10,7 @@ import { db } from "@/lib/db";
 import { PrismaAdapter } from "@auth/prisma-adapter";
 import { getUserById } from "@/data/user";
 import { getTwoFactorConfirmationByUserId } from "@/data/two-factor-confirmation";
-import { getAccountByUserId } from "./data/account";
+import { getAccountByUserId } from "@/data/account";
 
 export const authOptions: NextAuthOptions = {
   providers: [
