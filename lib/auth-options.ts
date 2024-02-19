@@ -7,7 +7,7 @@ import { LoginSchema } from "@/schemas";
 import { getUserByEmail } from "@/data/user";
 import bcrypt from "bcryptjs";
 import { db } from "@/lib/db";
-import { PrismaAdapter } from "@auth/prisma-adapter";
+import { PrismaAdapter } from "@next-auth/prisma-adapter";
 import { getUserById } from "@/data/user";
 import { getTwoFactorConfirmationByUserId } from "@/data/two-factor-confirmation";
 import { getAccountByUserId } from "@/data/account";
