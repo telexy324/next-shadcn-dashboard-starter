@@ -4,11 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="91db85a3-ec32-443b-9eb7-12c14a02ef35" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/auth.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/auth.config.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth.ts" beforeDir="false" afterPath="$PROJECT_DIR$/auth.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-    </list>
+    <list default="true" id="91db85a3-ec32-443b-9eb7-12c14a02ef35" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -40,7 +36,7 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "yarn",
-    "ts.external.directory.path": "D:\\myreact\\next-shadcn-dashboard-starter\\node_modules\\typescript\\lib",
+    "ts.external.directory.path": "/Users/yangxu/Library/Application Support/JetBrains/Toolbox/apps/WebStorm/ch-0/232.10203.14/WebStorm.app/Contents/plugins/javascript-impl/jsLanguageServicesImpl/external",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
