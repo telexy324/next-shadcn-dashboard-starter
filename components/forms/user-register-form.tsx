@@ -121,6 +121,25 @@ export default function UserAuthForm() {
             )}
           />
 
+          <FormField
+            control={form.control}
+            name="confirm"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>Confirm password</FormLabel>
+                <FormControl>
+                  <Input
+                    type="password"
+                    placeholder="******"
+                    disabled={loading}
+                    {...field}
+                  />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+
           <Button disabled={loading} className="ml-auto w-full" type="submit">
             Continue With Email
           </Button>

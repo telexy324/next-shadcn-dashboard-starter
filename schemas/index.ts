@@ -62,4 +62,12 @@ export const RegisterSchema = z.object({
   name: z.string().min(1, {
     message: "Name is required",
   }),
+  confirm: z.string().min(6, {
+    message: "Minimum 6 characters required",
+  }),
+}).refine(data => {
+  return data.password === data.confirm
+}, {
+  message: 'Mismatched',
+  path: ["confirm"],
 });
