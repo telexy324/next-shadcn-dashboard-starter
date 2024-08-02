@@ -6,11 +6,21 @@
   <component name="ChangeListManager">
     <list default="true" id="91db85a3-ec32-443b-9eb7-12c14a02ef35" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/constants/data.ts" beforeDir="false" afterPath="$PROJECT_DIR$/constants/data.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/prisma/schema.prisma" beforeDir="false" afterPath="$PROJECT_DIR$/prisma/schema.prisma" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/schemas/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/schemas/index.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="TypeScript File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -27,27 +37,28 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "D:/myreact/next-shadcn-dashboard-starter",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "yarn",
-    "ts.external.directory.path": "D:\\myreact\\next-shadcn-dashboard-starter\\node_modules\\typescript\\lib",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/myreact/next-shadcn-dashboard-starter/components/tables&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;yarn&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;D:\\myreact\\next-shadcn-dashboard-starter\\node_modules\\typescript\\lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\myreact\next-shadcn-dashboard-starter\components\tables" />
+      <recent name="D:\myreact\next-shadcn-dashboard-starter\app\(dashboard)\dashboard" />
+      <recent name="D:\myreact\next-shadcn-dashboard-starter\app\(auth)\register" />
       <recent name="D:\myreact\next-shadcn-dashboard-starter" />
       <recent name="D:\myreact\next-shadcn-dashboard-starter\lib" />
-      <recent name="D:\myreact\next-shadcn-dashboard-starter\components\forms" />
-      <recent name="D:\myreact\next-shadcn-dashboard-starter\app" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -82,6 +93,17 @@
       <workItem from="1720491555976" duration="3685000" />
       <workItem from="1720504274407" duration="76000" />
       <workItem from="1720504360785" duration="1187000" />
+      <workItem from="1720609901177" duration="152000" />
+      <workItem from="1720673913649" duration="2523000" />
+      <workItem from="1721710116846" duration="2527000" />
+      <workItem from="1721975713684" duration="1185000" />
+      <workItem from="1722047983966" duration="26176000" />
+      <workItem from="1722233704664" duration="622000" />
+      <workItem from="1722401797561" duration="3418000" />
+      <workItem from="1722477478677" duration="2578000" />
+      <workItem from="1722561273542" duration="4941000" />
+      <workItem from="1722574521563" duration="1799000" />
+      <workItem from="1722578143038" duration="1873000" />
     </task>
     <servers />
   </component>

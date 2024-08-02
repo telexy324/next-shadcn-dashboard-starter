@@ -81,3 +81,10 @@ model TwoFactorConfirmation {
 
   @@unique([userId])
 }
+
+model CheckInRecord {
+  id            String    @id @default(cuid())
+  name          String
+  location      String
+  checkInTime   DateTime?
+}
