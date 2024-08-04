@@ -2,10 +2,12 @@ import { Breadcrumbs } from "@/components/breadcrumbs";
 import { buttonVariants } from "@/components/ui/button";
 import { Heading } from "@/components/ui/heading";
 import { Separator } from "@/components/ui/separator";
-import { Employee } from "@/constants/data";
 import { cn } from "@/lib/utils";
 import { Plus } from "lucide-react";
 import Link from "next/link";
+import { CheckInTable } from "@/components/tables/checkin-tables/check-in-table";
+import { columns } from "@/components/tables/checkin-tables/columns";
+import { checkIn } from "@/actions/checkIn";
 
 const breadcrumbItems = [
   { title: "Dashboard", link: "/dashboard" },
@@ -24,10 +26,7 @@ export default async function page({ searchParams }: paramsProps) {
   const country = searchParams.search || null;
   const offset = (page - 1) * pageLimit;
 
-  const res = await fetch(
-    `https://api.slingacademy.com/v1/sample-data/users?offset=${offset}&limit=${pageLimit}` +
-      (country ? `&search=${country}` : ""),
-  );
+  const res = await checkIn();
   const employeeRes = await res.json();
   const totalUsers = employeeRes.total_users; //1000
   const pageCount = Math.ceil(totalUsers / pageLimit);
@@ -52,7 +51,7 @@ export default async function page({ searchParams }: paramsProps) {
         </div>
         <Separator />
 
-        <EmployeeTable
+        <CheckInTable
           searchKey="country"
           pageNo={page}
           columns={columns}

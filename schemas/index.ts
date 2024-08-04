@@ -91,7 +91,13 @@ export const CheckInSchema = z.object({
   location: z.string().min(1, {
     message: "Location is required",
   }),
-  checkInTime: z.date({
-    message: "Check in time is required",
-  }),
+  checkInTime: z
+    .date({
+      message: "Check in time is required",
+    })
+    .default(() => new Date("2024-01-01") as Date),
+});
+
+export const IdSchema = z.object({
+  id: z.string(),
 });
