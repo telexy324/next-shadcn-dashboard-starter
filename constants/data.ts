@@ -111,7 +111,7 @@ export type Employee = {
 };
 
 export type CheckInRecord = {
-  id: number;
+  id: string;
   name: string;
   location: string;
   checkInTime: string;

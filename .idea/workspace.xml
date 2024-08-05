@@ -5,14 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="91db85a3-ec32-443b-9eb7-12c14a02ef35" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/actions/checkIn.ts" beforeDir="false" afterPath="$PROJECT_DIR$/actions/checkIn.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(dashboard)/dashboard/checkIn/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(dashboard)/dashboard/checkIn/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/tables/checkin-tables/columns.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/tables/checkin-tables/columns.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/tables/checkin-tables/employee-table.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/tables/checkin-tables/check-in-table.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/forms/checkIn-form.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/forms/checkIn-form.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/tables/checkin-tables/cell-action.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/tables/checkin-tables/cell-action.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/constants/data.ts" beforeDir="false" afterPath="$PROJECT_DIR$/constants/data.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/schemas/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/schemas/index.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

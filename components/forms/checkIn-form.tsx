@@ -65,18 +65,18 @@ export default function CheckInForm() {
     });
   };
 
-  const onDelete = async (values: z.infer<typeof IdSchema>) => {
-    setError("");
-    setSuccess("");
-
-    startTransition(() => {
-      checkInDelete(values).then((data) => {
-        setError(data.error);
-        setSuccess(data.success);
-        router.push(`/dashboard/checkIn`);
-      });
-    });
-  };
+  // const onDelete = async (values: z.infer<typeof IdSchema>) => {
+  //   setError("");
+  //   setSuccess("");
+  //
+  //   startTransition(() => {
+  //     checkInDelete(values).then((data) => {
+  //       setError(data.error);
+  //       setSuccess(data.success);
+  //       router.push(`/dashboard/checkIn`);
+  //     });
+  //   });
+  // };
 
   return (
     <>

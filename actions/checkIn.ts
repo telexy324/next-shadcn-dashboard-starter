@@ -24,18 +24,13 @@ export const checkIn = async (values: z.infer<typeof CheckInSchema>) => {
   return { success: "Check in recorded!" };
 };
 
-export const checkInDelete = async (values: z.infer<typeof IdSchema>) => {
-  const validatedFields = IdSchema.safeParse(values);
-
-  if (!validatedFields.success) {
-    return { error: "Invalid fields!" };
+export const checkInDelete = async (id: string) => {
+  try {
+    await db.checkInRecord.delete({
+      where: { id },
+    });
+    return { success: "Check in deleted!" };
+  } catch (error) {
+    return { error: error as string };
   }
-
-  const { id } = validatedFields.data;
-
-  await db.checkInRecord.delete({
-    where: { id },
-  });
-
-  return { success: "Check in recorded!" };
 };
