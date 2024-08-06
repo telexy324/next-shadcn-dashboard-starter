@@ -33,8 +33,16 @@ import { useToast } from "../ui/use-toast";
 import FileUpload from "../file-upload";
 import { register } from "@/actions/register";
 import { router } from "next/client";
+import { Calendar } from "@/components/ui/calendar";
+import * as React from "react";
+import { DateRange } from "react-day-picker";
+import { addDays } from "date-fns";
 
-export default function CheckInForm() {
+interface ProductFormProps {
+  initialData: any | null;
+}
+
+export const CheckInForm: React.FC<ProductFormProps> = ({ initialData }) => {
   const searchParams = useSearchParams();
   const [loading, setLoading] = useState(false);
   const urlError =
@@ -45,6 +53,15 @@ export default function CheckInForm() {
   const [error, setError] = useState<string | undefined>("");
   const [success, setSuccess] = useState<string | undefined>("");
   const [isPending, startTransition] = useTransition();
+  const [open, setOpen] = useState(false);
+  const [date, setDate] = React.useState<DateRange | undefined>({
+    from: new Date(2023, 0, 20),
+    to: addDays(new Date(2023, 0, 20), 20),
+  });
+  const title = initialData ? "Edit product" : "Create product";
+  const description = initialData ? "Edit a product." : "Add a new product";
+  const toastMessage = initialData ? "Product updated." : "Product created.";
+  const action = initialData ? "Save changes" : "Create";
   const form = useForm<z.infer<typeof CheckInSchema>>({
     resolver: zodResolver(CheckInSchema),
     defaultValues: {
@@ -105,23 +122,6 @@ export default function CheckInForm() {
           onSubmit={form.handleSubmit(onSubmit)}
           className="w-full space-y-8"
         >
-          <FormField
-            control={form.control}
-            name="imgUrl"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel>Images</FormLabel>
-                <FormControl>
-                  <FileUpload
-                    onChange={field.onChange}
-                    value={field.value}
-                    onRemove={field.onChange}
-                  />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
           <div className="gap-8 md:grid md:grid-cols-3">
             <FormField
               control={form.control}
@@ -142,7 +142,7 @@ export default function CheckInForm() {
             />
             <FormField
               control={form.control}
-              name="description"
+              name="location"
               render={({ field }) => (
                 <FormItem>
                   <FormLabel>Description</FormLabel>
@@ -159,46 +159,20 @@ export default function CheckInForm() {
             />
             <FormField
               control={form.control}
-              name="price"
+              name="checkInTime"
               render={({ field }) => (
                 <FormItem>
                   <FormLabel>Price</FormLabel>
                   <FormControl>
-                    <Input type="number" disabled={loading} {...field} />
+                    <Calendar
+                      initialFocus
+                      mode="range"
+                      defaultMonth={date?.from}
+                      selected={date}
+                      onSelect={setDate}
+                      numberOfMonths={2}
+                    />
                   </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-            <FormField
-              control={form.control}
-              name="category"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>Category</FormLabel>
-                  <Select
-                    disabled={loading}
-                    onValueChange={field.onChange}
-                    value={field.value}
-                    defaultValue={field.value}
-                  >
-                    <FormControl>
-                      <SelectTrigger>
-                        <SelectValue
-                          defaultValue={field.value}
-                          placeholder="Select a category"
-                        />
-                      </SelectTrigger>
-                    </FormControl>
-                    <SelectContent>
-                      {/* @ts-ignore  */}
-                      {categories.map((category) => (
-                        <SelectItem key={category._id} value={category._id}>
-                          {category.name}
-                        </SelectItem>
-                      ))}
-                    </SelectContent>
-                  </Select>
                   <FormMessage />
                 </FormItem>
               )}
@@ -211,4 +185,4 @@ export default function CheckInForm() {
       </Form>
     </>
   );
-}
+};
