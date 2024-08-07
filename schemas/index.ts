@@ -101,3 +101,19 @@ export const CheckInSchema = z.object({
 export const IdSchema = z.object({
   id: z.string(),
 });
+
+export const PaginationSchema = z.object({
+  page: z.number({
+    message: "Name is required",
+  }),
+  limit: z.number({
+    message: "Name is required",
+  }),
+  orderBy: z.optional(z.string()),
+  desc: z.optional(z.boolean()),
+});
+
+export const CheckInsSchema = z.object({
+  pagination: PaginationSchema,
+  checkIn: CheckInSchema,
+});
