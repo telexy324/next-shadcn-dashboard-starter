@@ -1,7 +1,7 @@
 "use server";
 
 import * as z from "zod";
-import { CheckInSchema, CheckInsSchema, IdSchema } from "@/schemas";
+import { CheckInSchema, CheckInsSchema } from "@/schemas";
 import { db } from "@/lib/db";
 
 export const checkIn = async (values: z.infer<typeof CheckInSchema>) => {
@@ -35,7 +35,9 @@ export const checkInDelete = async (id: string) => {
   }
 };
 
-export const checkIns = async (values: z.infer<typeof CheckInsSchema>) => {
+export const checkIns = async (
+  values: z.infer<typeof CheckInsSchema>,
+): Promise<db.checkInRecord[]> => {
   const validatedFields = CheckInsSchema.safeParse(values);
 
   if (!validatedFields.success) {
@@ -43,20 +45,16 @@ export const checkIns = async (values: z.infer<typeof CheckInsSchema>) => {
   }
 
   const { pagination, checkIn } = validatedFields.data;
-
-  let orderByOption: Record<string, "asc" | "desc"> | undefined = undefined;
-  if (pagination.orderBy) {
-    orderByOption = {
-      [orderBy]: "desc", // 默认降序排列
-    };
-  }
+  const direction = pagination.desc === true ? "desc" : "asc";
 
   await db.checkInRecord.findMany({
-    take: size, // 每页显示的记录数量
-    skip: (page - 1) * size, // 跳过的记录数量
-    orderBy: {
-      createdAt: "desc", // 可根据需要调整排序方式
-    },
+    orderBy: pagination.orderBy
+      ? {
+          [pagination.orderBy]: direction,
+        }
+      : {},
+    skip: (pagination.page - 1) * pagination.limit, // 计算要跳过的记录数，实现分页
+    take: pagination.limit, // 每页返回的记录数
   });
 
   return { success: "Check in recorded!" };
