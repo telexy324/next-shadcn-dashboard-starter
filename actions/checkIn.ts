@@ -38,7 +38,7 @@ export const checkInDelete = async (id: string) => {
 
 export const checkIns = async (
   values: z.infer<typeof CheckInsSchema>,
-): Promise<CheckInRecord[]> => {
+): Promise<CheckInRecord[] | { error: string }> => {
   try {
     const validatedFields = CheckInsSchema.safeParse(values);
 
@@ -59,7 +59,8 @@ export const checkIns = async (
       take: pagination.limit, // 每页返回的记录数
     });
   } catch (error) {
-    console.error("Error fetching users:", error);
-    throw error; // 抛出错误，让调用方处理
+    // eslint-disable-next-line no-console
+    console.log(error);
+    return { error: "find check in records failed!" };
   }
 };
