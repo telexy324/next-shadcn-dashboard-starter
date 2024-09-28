@@ -1,4 +1,5 @@
 import { NavItem } from "@/types";
+import { Task } from "gantt-task-react";
 
 export type User = {
   id: number;

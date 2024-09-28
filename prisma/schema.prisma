@@ -88,3 +88,30 @@ model CheckInRecord {
   location      String
   checkInTime   DateTime?
 }
+
+enum TaskType {
+  task
+  milestone
+  project
+}
+
+model Task {
+  taskId            String    @id @default(cuid())
+  id                String
+  type              TaskType  @default(task)
+  name              String
+  start             DateTime
+  end               DateTime
+  progress          Int
+  styles?: {
+      backgroundColor?: string;
+      backgroundSelectedColor?: string;
+      progressColor?: string;
+      progressSelectedColor?: string;
+  };
+  isDisabled?: boolean;
+  project?: string;
+  dependencies?: string[];
+  hideChildren?: boolean;
+  displayOrder?: number;
+}
